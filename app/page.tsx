@@ -1,9 +1,11 @@
-
+import Container from "@/components/Container";
 
 export default function Home() {
   return (
     <div className="">
-      <h2 className="">hello world</h2>
+      <Container>
+        <h2 className="">hello</h2>
+      </Container>
     </div>
   );
 }
