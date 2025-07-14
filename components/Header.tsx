@@ -5,8 +5,11 @@ import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import CartIcon from "./CartIcon";
 import SearchBar from "./SearchBar";
+import { currentUser } from "@clerk/nextjs/server";
+import { SignInButton } from "@clerk/nextjs";
 
-const Header = () => {
+const Header = async () => {
+  const user =  await currentUser()
   return (
     <header className="border-b border-gray-200 bg-white shadow-sm py-5">
       <Container className="flex justify-between items-center gap-7 text-lightColor dark:text-darkColor">
@@ -19,7 +22,11 @@ const Header = () => {
           {/* Add any additional header elements here, like search or cart */}
           <SearchBar/>
          <CartIcon/>
-         <button className="text-sm font-semibold hover:text-darkColor hoverEffect">Login</button>
+         {
+          !user && ( <SignInButton mode="modal">
+            <button className="text-sm font-semibold hover:text-darkColor hoverEffect">Sign In</button>
+          </SignInButton>)
+         }
         </div>
       </Container>
     </header>
