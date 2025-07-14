@@ -19,6 +19,7 @@ const Header = () => {
           {/* Add any additional header elements here, like search or cart */}
           <SearchBar/>
          <CartIcon/>
+         <button className="text-sm font-semibold hover:text-darkColor hoverEffect">Login</button>
         </div>
       </Container>
     </header>
