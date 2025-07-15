@@ -12,8 +12,8 @@ const MobileMenu = () => {
       </button>
       <div className="md:hidden">
         <Sidebar
-        //   isOpen={isSidebarOpen}
-        //   onClose={() => setIsSidebarOpen(false)}
+          isOpen={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
         />
       </div>
     </>
